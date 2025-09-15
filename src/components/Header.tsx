@@ -10,6 +10,10 @@ const Header: React.FC = () => {
         setLanguage(language === 'en' ? 'es' : 'en');
     };
 
+    const redirectToWebApp = () => {
+        window.location.href = 'https://front-end-eosin-eta.vercel.app/'
+    }
+
     return (
         <header className="bg-white shadow-sm sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +34,7 @@ const Header: React.FC = () => {
                         <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors">
                             {t('nav.pricing')}
                         </a>
-                        <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">
+                        <a href="#benefits" className="text-gray-700 hover:text-blue-600 transition-colors">
                             {t('nav.about')}
                         </a>
                         <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">
@@ -47,10 +51,10 @@ const Header: React.FC = () => {
                             <Globe className="h-4 w-4" />
                             <span className="uppercase">{language}</span>
                         </button>
-                        <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">
+                        <a href="https://front-end-eosin-eta.vercel.app/" className="text-gray-700 hover:text-blue-600 transition-colors">
                             {t('nav.login')}
                         </a>
-                        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <button onClick={redirectToWebApp} className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                             {t('nav.signup')}
                         </button>
                     </div>
