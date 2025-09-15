@@ -5,6 +5,14 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Hero: React.FC = () => {
     const { t } = useLanguage();
 
+    const sendToWebApp = () => {
+        window.location.href='https://front-end-eosin-eta.vercel.app/'
+    }
+
+    const sendToVideo = () => {
+        window.location.href = 'https://www.canva.com/design/DAGzA5SlfXg/3AuN62RZOqLIrl0Xp8XRNA/view?utm_content=DAGzA5SlfXg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h861f782682'
+    }
+
     return (
         <section className="bg-gradient-to-br from-blue-50 to-indigo-100 pt-16 pb-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,11 +25,11 @@ const Hero: React.FC = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                        <button className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
+                        <button onClick={sendToWebApp} className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-all transform hover:scale-105 flex items-center justify-center space-x-2">
                             <span>{t('hero.cta.primary')}</span>
                             <ArrowRight className="h-5 w-5" />
                         </button>
-                        <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all flex items-center justify-center space-x-2">
+                        <button onClick={sendToVideo} className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg text-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all flex items-center justify-center space-x-2">
                             <Play className="h-5 w-5" />
                             <span>{t('hero.cta.secondary')}</span>
                         </button>
